@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-100">
+
+  <header class="sticky top-0 z-50">
+    <h1 class="bg-blue-400 flex justify-center p-4 sm:p-5 text-xl sm:text-2xl font-bold">Weather Dashboard</h1>
+  </header>
+
+  <section class="flex flex-col lg:flex-row min-h-screen bg-gray-100 p-3 sm:p-5 gap-4">
+
+    <!-- Sidebar -->
+    <aside class="w-full lg:w-80 bg-white shadow-lg rounded-lg p-5 flex flex-col">
+      <h2 class="text-xl sm:text-2xl font-bold mb-4">Search Weather</h2>
+
+      <label for="cityInput" class="text-base sm:text-lg font-semibold mb-2">City Name:</label>
+      <input type="text" id="cityInput" placeholder="Enter city name"
+        class="border p-2 rounded bg-white mb-4 text-sm sm:text-base" required />
+
+      <button id="searchButton"
+        class="bg-sky-500 hover:bg-sky-700 text-white p-2 rounded shadow mb-4 text-sm sm:text-base">Search</button>
+
+      <p class="text-center my-2 text-sm">or</p>
+
+      <button id="locationButton"
+        class="bg-gray-400 hover:bg-gray-500 text-white p-2 rounded shadow mb-4 text-sm sm:text-base">Use Current
+        Location</button>
+
+      <label for="recentCities" class="font-bold mt-3 text-sm sm:text-base">Recently Searched:</label>
+      <select id="recentCities" class="border p-2 rounded bg-white mb-4 w-full mt-3 text-sm sm:text-base">
+        <option value="">Select</option>
+      </select>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col gap-5">
+
+      <!-- Current Weather -->
+      <div id="weatherInfo"
+        class="bg-white shadow-lg rounded-lg p-5 flex flex-col items-center text-center">
+        <img id="weatherIcon" src="https://cdn-icons-png.flaticon.com/512/1163/1163666.png" alt="Icon"
+          class="w-20 sm:w-24 h-20 sm:h-24 mb-3" />
+        <h2 class="text-xl sm:text-2xl font-bold mb-3">Weather Information</h2>
+        <p id="cityName" class="text-base sm:text-lg mb-1"></p>
+        <p id="temperature" class="text-base sm:text-lg mb-1"></p>
+        <p id="humidity" class="text-base sm:text-lg mb-1"></p>
+        <p id="windSpeed" class="text-base sm:text-lg"></p>
+      </div>
+
+      <!-- 5-Day Forecast -->
+      <div class="bg-white shadow-lg rounded-lg p-5">
+        <h3 class="text-xl sm:text-2xl font-bold mb-5 text-center">5-Day Forecast</h3>
+        <div id="forecastContainer"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="weather.js"></script>
+</body>
+
+</html>
+
